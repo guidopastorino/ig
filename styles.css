@@ -1,0 +1,403 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+}
+
+button * {
+    pointer-events: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    box-shadow: 1px 1px 4px #0000002d;
+}
+
+.hvr:hover {
+    background: #00000018;
+}
+
+.hvr:active {
+    background: #00000027;
+}
+
+.boxShadow {
+    box-shadow: 0 1px 4px #0000002d;
+}
+
+/* ===== NAVBAR INFO (sticky) ===== */
+.info {
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 20;
+}
+
+.info__username span {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.info__btn button {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    font-size: 17.5px;
+    cursor: pointer;
+    font-weight: bold;
+    background: transparent;
+}
+
+/* ===== HEADER ===== */
+.header {
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+/* user details */
+.header__user-details {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.header__user-details img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.header__user-details .header__nums {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.header__user-details .header__nums > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header__user-details .header__nums > div span:first-child {
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.header__user-details .header__nums > div span:last-child {
+    font-size: 15px;
+}
+
+/* description */
+.header .header__desc {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    gap: 2px;
+    font-size: 15.3px;
+}
+
+.header .header__desc > span:nth-child(1) {
+    font-weight: bold;
+}
+
+.header .header__desc > span:nth-child(2) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    word-break: break-word;
+    text-align: start;
+}
+
+.header .header__desc > a {
+    text-decoration: none;
+    color: #162e96;
+}
+
+/* followed by */
+.header__followed-by {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+
+.header__followed-by > div {
+    display: flex;
+    align-self: flex-start;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 40px;
+    flex-shrink: 0;
+    height: 20px;
+}
+
+.header__followed-by > div img {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+.header__followed-by > div img:first-child {
+    left: 0;
+}
+
+.header__followed-by > div img:last-child {
+    right: 0;
+}
+
+.header__followed-by > span {
+    font-size: 14px;
+}
+
+/* buttons */
+.header__btns .follow {
+    background: #338afc;
+    color: #fff;
+}
+
+.header__btns .following {
+    background: #cecece8a;
+}
+
+.header__btns {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 10px;
+}
+
+.header__btns button {
+    color: #222;
+    background: #cecece8a;
+    padding: 10px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 10px;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.header__btns button:last-child {
+    width: 37px;
+    height: 37px;
+}
+
+.no-suggests i:first-child {
+    display: block;
+}
+
+.no-suggests i:last-child {
+    display: none;
+}
+
+.suggests i:first-child {
+    display: none;
+}
+
+.suggests i:last-child {
+    display: block;
+}
+
+/* ===== CHANGE CONTENT TYPE BTN (navbar - sticky) ===== */
+.content-type {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    background: #fff;
+    z-index: 20;
+    position: sticky;
+    top: 65px;
+    width: 100%;
+    padding-bottom: 2px;
+}
+
+.content-type button {
+    padding: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+    background: none;
+    border: none;
+}
+
+.content-type button.btn-type-active {
+    border-bottom: 2px solid #000;
+}
+
+/* ===== POSTS TYPE STYLES ===== */
+.posts {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.posts--post {
+    height: 32vw;
+    max-height: 229.333px;
+}
+
+.posts--reel {
+    height: 64vw;
+    max-height: 400px;
+}
+
+.posts img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.posts i {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: #fff;
+    font-size: 13px;
+}
+
+.posts video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* ===== CONTENT CONTAINER ===== */
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    gap: 2px;
+}
+
+
+/* ===== NAVBAR BOTTOM ===== */
+.navbar{
+    background: #fff;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 25;
+}
+
+.navbar ul{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    list-style: none;
+}
+
+.navbar ul li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.navbar ul li *{
+    pointer-events: none;
+}
+
+.nav-link i:first-child{
+    display: block;
+}
+
+.nav-link i:last-child{
+    display: none;
+}
+
+.nav-link-active i:first-child{
+    display: none;
+}
+
+.nav-link-active i:last-child{
+    display: block;
+}
+
+.navbar ul li img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.nav-link-active img{
+    outline: 2px solid #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 400px) {
+    .header__user-details {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .header__user-details img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .header__user-details .header__nums {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .header__user-details .header__nums > div span:first-child {
+        font-size: 20px;
+    }
+}
